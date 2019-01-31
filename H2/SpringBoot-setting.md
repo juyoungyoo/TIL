@@ -10,7 +10,7 @@ spring:
       path: /console
 ```
 
-localhost:~/console에서 확인할 수 있다.
+<hr/>
 
 ### 2. Configuration에 설정 [실패/확인필요]
 ```
@@ -28,3 +28,5 @@ public class H2Configuration {
 
 }
 ```
+
+localhost:~/console에서 확인할 수 있다.
