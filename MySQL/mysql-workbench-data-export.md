@@ -13,7 +13,11 @@
 - Export Options
   - Export to Dump Project Folder : 테이블 별로 백업 파일 생성
   - Export to Self-Contained file : 데이터베이스 별 백업 파일 생성
+<<<<<<< HEAD
   - Create Dump in a single Transaction
+=======
+  - Create Dump in a single Transaction :
+>>>>>>> 2fd28b6ddfb570b7e967622b433805273f426184
   - Include create schema
 
 
@@ -50,6 +54,13 @@ Workbench 실행 시 에러발생
 Config file PATH : `C:\User\UserName\AppData\Roaming\Oracle\MySQL Notifier\settings.config`
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 2fd28b6ddfb570b7e967622b433805273f426184
 #### 참고
 [DataBase import & export](https://m.blog.naver.com/islove8587/220954758979)
 [Mysql 실행 시 에러해결](https://bitsoul.tistory.com/38 )
