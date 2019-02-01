@@ -29,4 +29,4 @@ public class H2Configuration {
 }
 ```
 
-localhost:~/console에서 확인할 수 있다.
+localhost:~/console에서 확인 가능
