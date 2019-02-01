@@ -13,13 +13,8 @@
 - Export Options
   - Export to Dump Project Folder : 테이블 별로 백업 파일 생성
   - Export to Self-Contained file : 데이터베이스 별 백업 파일 생성
-<<<<<<< HEAD
   - Create Dump in a single Transaction
-=======
-  - Create Dump in a single Transaction :
->>>>>>> 2fd28b6ddfb570b7e967622b433805273f426184
   - Include create schema
-
 
 2. Start Export..
 
@@ -37,7 +32,7 @@
 <hr/>
 
 ### [ERROR] MySQL Workbench export fail
-![error-msg](/images/2019/02/5-error.PNG)
+![error-msg](/images/2019/02/5-error.PNG)   
 MySqldump 버전이 맞지 않아 발생하는 문제로, MySqldump 실행 파일 경로를 직접 설정해줘야한다.
 ###### 해결방법
 1. C:\Program Files\MySQL\MySQL Server 5.6\bin에 mysqldump.exe 파일 존재유무 확인
@@ -54,14 +49,7 @@ Workbench 실행 시 에러발생
 Config file PATH : `C:\User\UserName\AppData\Roaming\Oracle\MySQL Notifier\settings.config`
 
 
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> 2fd28b6ddfb570b7e967622b433805273f426184
 #### 참고
-[DataBase import & export](https://m.blog.naver.com/islove8587/220954758979)
-[Mysql 실행 시 에러해결](https://bitsoul.tistory.com/38 )
+[DataBase import & export](https://m.blog.naver.com/islove8587/220954758979)    
+[Mysql 실행 시 에러해결](https://bitsoul.tistory.com/38 )    
 [Mysql export version mismatch error](https://congjava.tistory.com/285)
