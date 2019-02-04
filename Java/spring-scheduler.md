@@ -1,5 +1,5 @@
 ### Spring scheduler 설정방법
-- servlet.xml 설정 ( task 사용 )
+servlet.xml 설정 ( task 사용 )
 ~~~
 xmlns:task="http://www.springframework.org/schema/task"
 http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
@@ -34,7 +34,7 @@ public class Scheduler {
 
 
 ---
-##### cron 양식
+##### [ cron 양식 ]
 
 <b>초 분 시 일 월 년도</b>
 ```
@@ -55,10 +55,10 @@ public class Scheduler {
     # : 몇번째 무슨 요일 2#1 > 첫번째 월요일
 ```
 
-##### 자주 사용하는 cron 식
+##### [ 자주 사용하는 cron 식 ]
 
 0 0 12 * * * : 매일 12시 실행
 0 0-5 14 * * * : 매일 14시 0,1,2,3,4,5분에 실행
 0 0/5 14 * * * : 매일 14시에 5분간격으로 실행
 0 15 10 ? * 6L : 매월 마지막 금요일 아무날이나 10시 15분에 실행
-* /1 * * * * : 매 1분마다 실행
+\* /1 * * * * : 매 1분마다 실행
