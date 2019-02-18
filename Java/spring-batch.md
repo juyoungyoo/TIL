@@ -23,4 +23,6 @@
 * tasklet 하나와 Reader & Processor & Writer 한 묶음이 같은 레벨입니다.
 * Reader & Processor 끝난 후 Tasklet으로 마무리를 하는 등으로 할 수 없습니다.
 
+
+
 `Tasklet : @Component, @Bean 비슷한 역할이라고 봐도 된다. `
