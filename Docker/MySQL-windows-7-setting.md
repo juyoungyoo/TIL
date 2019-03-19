@@ -1,4 +1,4 @@
-### Docker MySQL 외부 접근하는 방법 (Window)
+### Docker MySQL 외부 접근하는 방법 (Windows 7, 10)
 
 ##### Docker MySQL 설치
 MySQL8.0 tag로 설치 했을 때, docker는 생성되었으나 외부접근에 실패하였습니다.
