@@ -89,3 +89,6 @@ $git clean -f -d -x // gitignore에 명시한 무시된 파일까지 삭제
 ### commit message 변경 (git commit -amend)
 
 참고 : https://gmlwjd9405.github.io/2018/05/25/git-add-cancle.html
+
+
+
