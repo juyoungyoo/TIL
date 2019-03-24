@@ -121,3 +121,43 @@ ___
 
 
 ___
+
+#Spring Cloud netflix
+Spring Boot application을 위한 Nexflix OSS통합 제공	  
+
+#### Netflix OSS 패턴
+- Service Discovery   :  Eureka 
+- Circuite Breaker     :   Hystrix
+- Intelligent Routing :   Zuul ( API gateway )
+- Client Side Load Balancing : Ribbon 
+
+#### 기능 
+- Service Discovery
+ - Eureka 인스턴스 등록 :  Client는 Spring이 관리하는 빈을 사용하여 탐지가능 
+ - 내장된 Eureka server는 선언적 java config을 통하여 생성가능
+- Circuit Discovery 
+ - Hystrix clients는 간단한 어노테이션 기반으로 구축될 수 있다.
+ - 선언적 java config로 내장된 Hystrix dashboard
+- 선언적 REST Client
+ - Feign은 JAX-RS 또는 Spring MVC 어노테이션으로 인터페이스를 동적으로 구현합니다.
+- Client Side Load Balancer: Ribbon
+- External Configuration
+  - Spring 환경에서 Archaius로 연결 (Spring Boot를 사용하여 Netflix 구성 요소를 설정 가능)
+- Router and Filter
+  - Zuul 필터의 자동 등록 및 Reverse Proxy 생성 설정 접근에 대한 간단한 규칙
+
+Zuul = API Gateway		
+외부에서 들어오는 요청 Zuul로 들어옴. 		
+Zuul은 URL에 맞는 서비스로 라우팅 시킴. 		
+if 동일한 서비스가 여러개 인스턴스 있을 경우 로드밸런싱 통해 트래픽 나눔  ( Zuul에 내장된 Ribbon 기능, default : RR 방식으로 분산)		
+Filter기능 : 로깅,인증,모니터링, CORS등 공통기능 처리가능		
+more : https://github.com/Netflix/zuul/wiki		
+
+
+
+#참고
+* https://github.com/Netflix/zuul/wiki
+* https://cloud.spring.io/spring-cloud-netflix/#quick-start
+* https://alwayspr.tistory.com/22
+
+
