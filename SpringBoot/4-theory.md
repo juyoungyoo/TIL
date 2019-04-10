@@ -1,4 +1,4 @@
-5.SpringBoot 원리 - 컨테이너와 서버 포트
+4.SpringBoot 원리 - 컨테이너와 서버 포트
 
 참고 : https://docs.spring.io/spring-boot/docs/current/reference/html/howto-embedded-web-servers.html
 Tomcat 외 다른 서블릿 컨테이너 사용하고 싶을 때, tomcat을 제거하고 원하는 container 추가한다. 
