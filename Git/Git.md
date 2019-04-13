@@ -21,7 +21,7 @@ $git remote add <원격 저장소> <저장소URL>
 * git checkout <branch>
 * git merge
 
-
+---
 ### git add 취소 ( 파일 상태 Unstage )
 ```
 $git add .      // 모든 파일 Staged 상태
@@ -30,7 +30,7 @@ $git status    // git 파일 상태
 // git add 취소방법
 $git reset HEAD [file]     
 ```
-
+---
 ### git commit 취소
 방법 1.  commit 취소, 해당 파일 staged 상태 ( 모두 보존)    
 ```
@@ -47,7 +47,7 @@ hard 명령어 사용 시 원격 저장소에 있는 마지막 commit 이후의 
 ```
 $git reset --hard HEAD^
 ```
-
+---
 ### git push 취소
 * 이 명령어 사용 시 local 내용을 remote에 강제로 override 하는 것임으로 신중히 사용하자
 * 되돌아간 commit 이후의 모든 commit 정보가 삭제된다.
@@ -74,7 +74,7 @@ $git commit -m "write commit message"
 $git push origin [branch name] -f //  -force
 = $git push origin +[branch name]  //  +[brance name] : 해당 branch를 강제로 push
 ```
-
+---
 ### untracked 파일 삭제 (git clean)
 .gitignore에 명시한 파일은 삭제되지 않는다.
 ```
@@ -88,7 +88,10 @@ $git clean -f -d -x // gitignore에 명시한 무시된 파일까지 삭제
 
 ### commit message 변경 (git commit -amend)
 
+---
+### [ERROR] fatal: refusing to merge unrelated histories  
+>"git merge" used to allow merging two branches that have no common base by default, which led to a brand new history of an existing project created and then get pulled by an unsuspecting maintainer, which allowed an unnecessary parallel history merged into the existing project. The command has been taught not to allow this by default, with an escape hatch --allow-unrelated-histories option to be used in a rare event that merges histories of two projects that started their lives independently. [참고](https://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories-on-rebase)
+`git pull origin [branchname] --allow-unrelated-histories`
+
+
 참고 : https://gmlwjd9405.github.io/2018/05/25/git-add-cancle.html
-
-
-
