@@ -245,7 +245,7 @@ public class Proto {
     ResourcePatternResolver { ... }
 ```
 
-# ApplicationContext : Environment 기능
+# ApplicationContext: Environment
 > `EnvironmentCapable`
 프로파일과 프로퍼티를 다루는 인터페이스
 
@@ -279,8 +279,8 @@ environment.getProperty("key name"); //
 # ApplicationContext : MessageSource
 - 국제화(i18n)기능을 제공하는 인터페이스
 
-ApplicationContext extends MessageSource
-- getMessage(String code, Object[] args, String default, Locale, loc)
+>ApplicationContext extends MessageSource
+주 메서드: getMessage(String code, Object[] args, String default, Locale, loc)
 
 - 스프링 부트 메세지 소스 파일 이름 : `messages.properties`, `messages_ko_KR.properties`...
 
@@ -296,9 +296,55 @@ public MessageSource messageSource() {
 }
 ```
 
-# ApplicationEventPublisher
+# ApplicationContext: ApplicationEventPublisher
 
+# ApplicationContext: ResourceLoader
+- 리소스를 읽어오는 기능을 제공하는 인터페이스
+> ApplicationContext extends ResourceLoader
+주 메서드
+1. getResource([path/file.name]);  
+2. isOpen()
+3. isFile()
+4. isReadable()
+...
 
+### Resource 추상화
+org.springframework.core.io Resource
+
+- 특징
+1. java.net.URL을 추상화 시킴
+2. 스프링 내부에서 많이 사용하는 인터페이스
+
+- 추상화 시킨 이유
+ 1. 클래스패스 기준으로 리소스 읽어오는 기능이 없어 추가
+ 2. ServletContext를 기준으로 상대 경로를 읽어오는 기능 추가
+ 3. 새로운 핸들러를 등록하여 특별한 URL 접미사를 만들어 사용할 수 있지만 구현 복짭도와 편의성 메소드가 부족하여 이를 개선
+
+Resource interface
+> public interface Resource extends InputStreamSource
+
+- 주요 메서드
+  - getInputStream()
+  - exist()
+  - isOpen()
+  - getDescription(): 전체 경로 포함한 파일 이름 또는 실제 URL
+
+구현체   
+- UrlResource: java.net.URL 참고. 기본으로 지원하는 프로토콜 (http, https, ftp, file, jar ..)   
+- ClassPathResource: 지원하는 접두어 (classpath:)
+- FileSystemResource
+- __ServletContextResource__: 웹 애플리케이션 루트에서 상대 경로로 리소스 찾는다.
+
+실질적으로 가장 많이 사용되는 구현체는 `ServletContextResource` 이다.    
+이유: Resource의 타입은 location 문자열과 __ApplicationContext의 타입__ 에 따라 결정된다.     
+(예)
+```
+ClassPathXmlApplicationContext -> ClassPathResource
+FileSystemXmlApplicationContext -> FileSystemResource
+WebApplicationContext -> ServletContextResource
+```
+
+if) ApplicationContext의 타입에 상관없이 리소스 타입 강제하려면 prefix사용하면 된다. (prefix: file:///, classpath: ...)
 
 
 
