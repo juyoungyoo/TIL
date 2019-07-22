@@ -24,19 +24,24 @@ RDBMS는 분리하지 않고 기존 구조 그대로 유지 시키고 model laye
 
 #### 방법3. 이벤트 소싱(EventSourcing)을 적용한 구조
 ![](assets/markdown-img-paste-20190722235803245.png)
+![Event sourcing](assets/markdown-img-paste-20190723000434695.png)
 Application내 모든 activity를 이벤트로 전환하여 이벤트 스트림(Event stream)을 별도의 database에 저장하는 방식
-이벤트 스트림을 저장하는 database에는 데이터 추가만 가능하다. 쌓인 데이터를 구체화(Materialized) 시키는 시점에서 그때 까지 구축된 데이터를 바탕으로 조회대상 데이터를 작성하는 방법이다. 
+이벤트 스트림을 저장하는 database에는 데이터 추가만 가능하다. 쌓인 데이터를 구체화(Materialized) 시키는 시점에서 그때 까지 구축된 데이터를 바탕으로 조회대상 데이터를 작성하는 방법이다.
 
-이벤트 소싱의 이벤트 스트림은 오직 추가만 가능하고 필요로하는 시점에서 구체화 단계를 거치게 되고 이런 처리 구조가 CQRS의 Model 관점과 굉장히 잘 맞기에 CQRS패턴을 적용하고자 할 때 이벤트 소싱이 적용된 구조를 선택한다
+이벤트 소싱의 이벤트 스트림은 오직 추가만 가능하고 필요로하는 시점에서 구체화 단계를 거치게 되고 이런 처리 구조가 CQRS의 Model 관점과 굉장히 잘 맞기에 CQRS패턴을 적용하고자 할 때 이벤트 소싱이 적용된 구조를 선택한다.
 
-__ CQRS패턴에 이벤트 소싱은 필수가 아님.
-이벤트 소싱에 CQRS는 필수이다__
-
+__ 즉, CQRS패턴에 이벤트 소싱은 필수가 아님. 이벤트 소싱에 CQRS는 필수이다__
 
 
+---
+##### 기타 용어
+- 이벤트 저장 (eventstore)
+이벤트 저장에 사용하는 저장소는 크게 3가지로 분류 : 이벤트 저장에 특화된 데이터 저장소(eventstore), NoSQL, 관계형 데이터베이스 사용 (이외 서비스 용도에 맞게 다른것으로 사용해도 무관하다)
+- 스냅샷
+기준에 따라서 이벤트가 많이 쌓이면 중간에 스냅샷을 만들고, 스냅샷 이후의 이벤트만 가져와서 사용하는 방식이다.
+이벤트 저장에 특화된 저장소라면 알아서 처리해주지만 그 외에는 저장방식을 설계해야한다
+- 폴리글랏 저장소 : 다수의 database를 혼용하여 사용하는 것, 다양한 언어로 개발
 
-> 폴리글랏 저장소 : 다수의 database를 혼용하여 사용하는 것
-
-https://www.popit.kr/cqrs-eventsourcing/
-
-https://blog.aliencube.org/ko/2015/11/12/building-applications-on-cloud-with-event-sourcing-pattern-and-cqrs-pattern/
+##### 참고
+[나만 모르고 있던 CQRS & EventSourcing](https://www.popit.kr/cqrs-eventsourcing/)
+[이벤트 소싱 패턴과 CQRS 패턴을 적용해서 클라우드상에서 유연하게 앱 개발하기](https://blog.aliencube.org/ko/2015/11/12/building-applications-on-cloud-with-event-sourcing-pattern-and-cqrs-pattern/)
