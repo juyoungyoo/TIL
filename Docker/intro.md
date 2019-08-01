@@ -1,12 +1,42 @@
 # Docker
 
-오픈소스
+오픈소스 플랫폼
 
 컨테이너형 가상화 기술 사용 
 
 Docker =  dockerd + 관리하는 명령형 도구 
 
+
+
+# 가상화 (Virtualization)  
+
+> easy : 컴퓨터 안에 독립적인 컴퓨터를 만드는 것
+>
+> 컴퓨터에서 컴퓨터 리소스를 추상화 시킨다 
+>
+> 왜? 물리적 리소스를 여러 사용자 또는 환경에 배포해서 제한된 리소스를 최대한으로 활용하기 위해서
+>
+> 
+
 ####  호스트 운영체제형 가상화 vs 컨테이너 가상화
+
+- 호스트 운영체제 가상화
+
+OS에서 가상화 SW를 이용하여 게스트 OS 작동시킨다. ex) OracleVirtualBox,  VMware
+
+많은 자원(커널, 라이브러리 모두 설치 필요)이 소비되고 느리다. 
+
+- 컨테이너 가상화
+
+가상화 SW 사용하는 것이 아닌 운영체제에 내장된 가상화도구를 사용하여 운영체제의 리소스를 격리해 가상 운영체제를 만듬
+
+이 가상 운영체제 __컨테이너__ 라고 부름 ( 컨테이너 = 운영체제 + 애플리케이션)
+
+오버헤드를 최소화하기 위한 방법 ex) Docker
+
+Host OS에 독립적이 공간을 만들고 별도의 서버처럼 사용
+
+각 컨테이너는 같은 호스트 OS를 공유하여 __오버헤드가 적으며, 속도가 빠름__
 
 
 
@@ -135,6 +165,8 @@ docker image build -f Dokcerfile2 -t example/echo .
 # Docker container
 
 > 파일 시스템 + 애플리케이션
+>
+> 도커 이미지를 기반으로 생성.
 
 - RUN, STOP, RM 
 
@@ -244,17 +276,31 @@ CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   
 
 작성중
 
-ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
 
 
 
 
 
 
+### 쿠버네티스 Kubernetes
+
+실제 애플리케이션은 여러 컨테이너에 걸쳐 있고 이러한 컨테이너는 여러 서버에 배포되어 있을 경우
+
+여러 대의 서버나 하드웨어를 모아서 한 대처럼 보이게 하는 기술을 클러스터링(*clustering*)이라고 한다. 
+
+이를 통해서 가용성과 확장성을 향상가능
+
+이런 멀티호스트 환경에서 __컨테이너를 클러스터링하기 위한 툴을 컨테이너 오케스트레이션 툴__이라고 합니다. 오케스트레이션 툴은 컨테이너들을 클러스터링하기 위해 __컨테이너 시작 및 정지와 같은 조작, 호스트 간 네트워크 연결, 스토리지 관리, 컨테이너를 어떤 호스트에서 가동시킬지와 같은 스케줄링 기능을 제공__
 
 
 
+https://futurecreator.github.io/2018/11/09/it-infrastructure-basics/
 
+[구글이 만든 Docker Container Orchestration 툴, Kubernetes 소개](https://www.popit.kr/kubernetes-introduction/)
+
+[Docker 개발환경 구축방법](http://raccoonyy.github.io/docker-usages-for-dev-environment-setup/)
+
+[Docker (Compose) 활용법 - 개발 환경 구성하기](http://raccoonyy.github.io/docker-usages-for-dev-environment-setup/)
 
 
 
