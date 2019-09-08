@@ -23,7 +23,7 @@ J2EE(Enterprise Edition)
 
 ---
 
- ### Entity 생명주기 (4)
+### Entity 생명주기 (4)
 
 - 비영속 (new/transient) : 영속성 컨텍스트와 전혀 관계가 없는 새로운 상태
   - 객체를 생성한 상태
@@ -35,8 +35,7 @@ J2EE(Enterprise Edition)
 - 삭제 (removed) : 삭제된 상태
   - em.remove();
 
-![image-20190720210703903](/Users/juyoungyoo/Library/Application Support/typora-user-images/image-20190720210703903.png)
-
+![image-20190720210703903](assert/image-20190720210703903.png)
 
 
 ----
