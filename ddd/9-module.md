@@ -258,3 +258,7 @@ __응집도 높은 도메인 객체를 모듈화하고 응집력이 없거나 �
         +-- messaging
         +-- persistence
 ```
+![헥사고날 이미지 ](assets/markdown-img-paste-20200309013211492.png)
+
+이미지 출처
+- [Clean Architecture : Part 1 — Database vs Domain](https://medium.com/@younghyun/%ED%81%B4%EB%A6%B0-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%ED%8C%8C%ED%8A%B81-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-vs-%EB%8F%84%EB%A9%94%EC%9D%B8-236c7008ac83)
