@@ -1,7 +1,7 @@
 # 모듈
-> Java = package
-> C# = namespace
-> Ruby = module
+> Java = package  
+> C# = namespace  
+> Ruby = module  
 
 ## 로드맵
 - `전통적인 모듈`, `배포 모듈성`의 차이점
@@ -33,7 +33,7 @@
   - 리팩토링 하기 쉬움    
   - 이미 모듈화 되었기 때문에, OSGi나 직소(java 9)와 같은 모듈화 장치 도입이 쉬워진다. (아래에서 조금 더 자세히 다룬다.)    
 
-###### 지양하는 것
+##### 지양하는 것
 1. 일반적인 컴포넌트 타입, 패턴을 사용한 __기계적인 모델__ 을 생성 금지
 - 하나의 모듈로 각각 분리할 경우, 모듈화의 장점을 취할 수 없다.    
 ```
@@ -258,7 +258,9 @@ __응집도 높은 도메인 객체를 모듈화하고 응집력이 없거나 �
         +-- messaging
         +-- persistence
 ```
-![헥사고날 이미지 ](assets/markdown-img-paste-20200309013211492.png)
+[실습)IDDD 예제](https://github.com/VaughnVernon/IDDD_Samples
+[실습)내가 생각한 방향](https://github.com/depromeet/7th-final-team10-server)
+![헥사고날 이미지](assets/markdown-img-paste-20200309013211492.png)
 
 이미지 출처
 - [Clean Architecture : Part 1 — Database vs Domain](https://medium.com/@younghyun/%ED%81%B4%EB%A6%B0-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%ED%8C%8C%ED%8A%B81-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-vs-%EB%8F%84%EB%A9%94%EC%9D%B8-236c7008ac83)
